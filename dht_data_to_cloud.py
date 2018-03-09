@@ -131,14 +131,14 @@ def main():
       }
       
       
-      #Uploading the data onto the spreadsheet on the cloud
+      #Uploading the data onto the spreadsheet present on the cloud
       result = service.spreadsheets().values().append(
       spreadsheetId=spreadsheetId, range=rangeName,
        valueInputOption="USER_ENTERED", body=body).execute()
 
 
 
-    #Extracting data from the smae spreadsheet.
+    #Extracting data from the same spreadsheet.
     result = service.spreadsheets().values().get(
         spreadsheetId=spreadsheetId, range=rangeName).execute()
     values = result.get('values', [])
